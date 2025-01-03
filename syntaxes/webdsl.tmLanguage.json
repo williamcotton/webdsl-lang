@@ -1,0 +1,216 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.webdsl",
+	"name": "WebDSL",
+	"patterns": [
+		{
+			"include": "#embedded-html"
+		},
+		{
+			"include": "#embedded-css"
+		},
+		{
+			"include": "#embedded-sql"
+		},
+		{
+			"include": "#embedded-jq"
+		},
+		{
+			"include": "#embedded-lua"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#blocks"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.webdsl",
+					"match": "\\b(website|layouts|pages|styles|api|query|route|method|fields|name|author|version|port|database|layout|content|html|css|sql|jq|lua|required|type|format|length|executeQuery|preFilter|postFilter)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.webdsl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.webdsl",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"name": "constant.numeric.webdsl",
+			"match": "\\b[0-9]+\\b"
+		},
+		"blocks": {
+			"patterns": [
+				{
+					"begin": "(?<!(?:html|css|sql|jq|lua)\\s*){",
+					"end": "}",
+					"patterns": [
+						{
+							"include": "$self"
+						}
+					]
+				}
+			]
+		},
+		"embedded-html": {
+			"begin": "(?<=html\\s*{)",
+			"end": "(?=})",
+			"contentName": "meta.embedded.block.html",
+			"patterns": [
+				{
+					"include": "text.html.basic"
+				}
+			]
+		},
+		"embedded-css": {
+			"begin": "(?<=css\\s*{)",
+			"end": "(?=})",
+			"contentName": "meta.embedded.block.css",
+			"patterns": [
+				{
+					"include": "source.css"
+				}
+			]
+		},
+		"embedded-sql": {
+			"begin": "(?<=sql\\s*{)",
+			"end": "(?=})",
+			"contentName": "meta.embedded.block.sql",
+			"patterns": [
+				{
+					"include": "source.sql"
+				}
+			]
+		},
+		"embedded-jq": {
+			"begin": "(?<=jq\\s*{)",
+			"end": "(?=})",
+			"contentName": "meta.embedded.block.jq",
+			"patterns": [
+				{
+					"include": "#jq-blocks"
+				},
+				{
+					"include": "#jq-operators"
+				},
+				{
+					"include": "#jq-strings"
+				},
+				{
+					"include": "#jq-numbers"
+				}
+			]
+		},
+		"embedded-lua": {
+			"begin": "(?<=(?:lua|(?:pre|post)Filter\\s+lua)\\s*[{])",
+			"end": "[}](?!})",
+			"patterns": [
+				{
+					"include": "#lua-blocks"
+				},
+				{
+					"include": "source.lua"
+				}
+			]
+		},
+		"lua-blocks": {
+			"patterns": [
+				{
+					"begin": "{",
+					"end": "}",
+					"patterns": [
+						{
+							"include": "#lua-blocks"
+						},
+						{
+							"include": "source.lua"
+						}
+					]
+				}
+			]
+		},
+		"jq-blocks": {
+			"patterns": [
+				{
+					"begin": "{",
+					"end": "}",
+					"patterns": [
+						{
+							"include": "#jq-blocks"
+						},
+						{
+							"include": "#jq-operators"
+						},
+						{
+							"include": "#jq-strings"
+						},
+						{
+							"include": "#jq-numbers"
+						}
+					]
+				},
+				{
+					"begin": "\\[",
+					"end": "\\]",
+					"patterns": [
+						{
+							"include": "#jq-blocks"
+						},
+						{
+							"include": "#jq-operators"
+						},
+						{
+							"include": "#jq-strings"
+						},
+						{
+							"include": "#jq-numbers"
+						}
+					]
+				}
+			]
+		},
+		"jq-operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.jq",
+					"match": "\\b(map|select|\\.|\\|)\\b"
+				},
+				{
+					"name": "keyword.operator.jq",
+					"match": "[=:]"
+				}
+			]
+		},
+		"jq-strings": {
+			"name": "string.quoted.double.jq",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.jq",
+					"match": "\\\\."
+				}
+			]
+		},
+		"jq-numbers": {
+			"name": "constant.numeric.jq",
+			"match": "\\b[0-9]+\\b"
+		}
+	}
+}

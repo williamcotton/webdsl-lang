@@ -1,0 +1,31 @@
+{
+  "name": "webdsl",
+  "displayName": "webdsl",
+  "description": "webdsl",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "webdsl",
+      "aliases": ["WebDSL", "webdsl"],
+      "extensions": [".webdsl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "webdsl",
+      "scopeName": "source.webdsl",
+      "path": "./syntaxes/webdsl.tmLanguage.json",
+      "embeddedLanguages": {
+        "meta.embedded.block.html": "html",
+        "meta.embedded.block.css": "css",
+        "meta.embedded.block.sql": "sql",
+        "meta.embedded.block.jq": "jq"
+      }
+    }]
+  }
+}
