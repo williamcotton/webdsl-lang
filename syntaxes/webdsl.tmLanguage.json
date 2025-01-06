@@ -36,7 +36,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.webdsl",
-					"match": "\\b(website|layouts|pages|styles|api|query|route|method|fields|name|author|version|port|database|layout|content|html|css|sql|jq|lua|required|type|format|length|executeQuery|preFilter|postFilter)\\b"
+					"match": "\\b(website|layouts|pages|styles|api|query|route|method|fields|name|author|version|port|database|layout|content|html|css|sql|jq|lua|required|type|format|length|executeQuery|pipeline)\\b"
 				}
 			]
 		},
@@ -118,12 +118,10 @@
 			]
 		},
 		"embedded-lua": {
-			"begin": "(?<=(?:lua|(?:pre|post)Filter\\s+lua)\\s*[{])",
-			"end": "[}](?!})",
+			"begin": "(?<=lua\\s*{)",
+			"end": "(?=})",
+			"contentName": "meta.embedded.block.lua",
 			"patterns": [
-				{
-					"include": "#lua-blocks"
-				},
 				{
 					"include": "source.lua"
 				}
