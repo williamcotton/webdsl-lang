@@ -36,7 +36,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.webdsl",
-					"match": "\\b(website|layouts|pages|styles|api|query|script|transform|route|method|fields|name|author|version|port|database|layout|content|html|css|sql|jq|lua|required|type|format|length|executeQuery|executeScript|executeTransform|executeRoute|executeMethod|executeFields|executeName|executeAuthor|executeVersion|executePort|executeDatabase|executeLayout|executeContent|executeHtml|executeCss|executeSql|executeJq|executeLua|executeRequired|executeType|executeFormat|executeLength|pipeline)\\b"
+					"match": "\\b(page|dynamic|website|layouts|pages|styles|api|query|script|transform|route|method|fields|name|author|version|port|database|layout|content|html|css|sql|jq|lua|required|type|format|length|executeQuery|executeScript|executeTransform|executeRoute|executeMethod|executeFields|executeName|executeAuthor|executeVersion|executePort|executeDatabase|executeLayout|executeContent|executeHtml|executeCss|executeSql|executeJq|executeLua|executeRequired|executeType|executeFormat|executeLength|pipeline)\\b"
 				}
 			]
 		},
