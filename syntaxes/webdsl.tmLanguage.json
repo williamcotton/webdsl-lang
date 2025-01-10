@@ -19,6 +19,9 @@
 			"include": "#embedded-lua"
 		},
 		{
+			"include": "#embedded-mustache"
+		},
+		{
 			"include": "#keywords"
 		},
 		{
@@ -36,7 +39,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.webdsl",
-					"match": "\\b(page|dynamic|website|layouts|pages|styles|api|query|script|transform|route|method|fields|name|author|version|port|database|layout|content|html|css|sql|jq|lua|required|type|format|length|executeQuery|executeScript|executeTransform|executeRoute|executeMethod|executeFields|executeName|executeAuthor|executeVersion|executePort|executeDatabase|executeLayout|executeContent|executeHtml|executeCss|executeSql|executeJq|executeLua|executeRequired|executeType|executeFormat|executeLength|pipeline)\\b"
+					"match": "\\b(website|layout|page|styles|api|query|script|transform|route|method|fields|name|author|version|port|database|content|html|css|sql|jq|lua|mustache|required|type|format|length|executeQuery|executeScript|executeTransform|executeRoute|executeMethod|executeFields|executeName|executeAuthor|executeVersion|executePort|executeDatabase|executeLayout|executeContent|executeHtml|executeCss|executeSql|executeJq|executeLua|executeRequired|executeType|executeFormat|executeLength|pipeline|dynamic)\\b"
 				}
 			]
 		},
@@ -58,7 +61,7 @@
 		"blocks": {
 			"patterns": [
 				{
-					"begin": "(?<!(?:html|css|sql|jq|lua)\\s*){",
+					"begin": "(?<!(?:html|css|sql|jq|lua|mustache)\\s*){",
 					"end": "}",
 					"patterns": [
 						{
@@ -124,6 +127,16 @@
 			"patterns": [
 				{
 					"include": "source.lua"
+				}
+			]
+		},
+		"embedded-mustache": {
+			"begin": "(?<=mustache\\s*{)",
+			"end": "(?=})",
+			"contentName": "meta.embedded.block.mustache",
+			"patterns": [
+				{
+					"include": "source.mustache"
 				}
 			]
 		},
