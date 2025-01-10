@@ -4,6 +4,9 @@
 	"name": "WebDSL",
 	"patterns": [
 		{
+			"include": "#comments"
+		},
+		{
 			"include": "#embedded-html"
 		},
 		{
@@ -222,6 +225,20 @@
 		"jq-numbers": {
 			"name": "constant.numeric.jq",
 			"match": "\\b[0-9]+\\b"
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.line.double-slash.webdsl",
+					"begin": "//\\s*({)?",
+					"end": "(})?\\s*$\\n?",
+					"patterns": [
+						{
+							"match": "^\\s*//.*"
+						}
+					]
+				}
+			]
 		}
 	}
 }
