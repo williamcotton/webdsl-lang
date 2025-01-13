@@ -109,17 +109,8 @@
 			"end": "(?=})",
 			"contentName": "meta.embedded.block.jq",
 			"patterns": [
-				{
-					"include": "#jq-blocks"
-				},
-				{
-					"include": "#jq-operators"
-				},
-				{
-					"include": "#jq-strings"
-				},
-				{
-					"include": "#jq-numbers"
+					{
+					"include": "source.jq"
 				}
 			]
 		},
