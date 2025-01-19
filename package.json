@@ -3,6 +3,16 @@
   "displayName": "webdsl",
   "description": "webdsl",
   "version": "0.0.1",
+  "publisher": "William Cotton",
+  "author": {
+    "name": "William Cotton",
+    "email": "williamcotton@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/williamcotton/webdsl"
+  },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.80.0"
   },
