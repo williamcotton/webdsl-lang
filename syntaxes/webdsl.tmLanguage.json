@@ -42,7 +42,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.webdsl",
-					"match": "\\b(website|include|layout|page|styles|api|query|script|transform|route|method|fields|name|author|version|port|database|content|html|css|sql|jq|lua|mustache|required|type|format|length|executeQuery|executeScript|executeTransform|executeRoute|executeMethod|executeFields|executeName|executeAuthor|executeVersion|executePort|executeDatabase|executeLayout|executeContent|executeHtml|executeCss|executeSql|executeJq|executeLua|executeRequired|executeType|executeFormat|executeLength|pipeline|dynamic)\\b"
+					"match": "\\b(website|include|layout|page|styles|api|query|script|transform|route|method|fields|name|author|version|port|database|content|html|css|sql|jq|lua|mustache|required|type|format|length|executeQuery|executeScript|executeTransform|executeRoute|executeMethod|executeFields|executeName|executeAuthor|executeVersion|executePort|executeDatabase|executeLayout|executeContent|executeHtml|executeCss|executeSql|executeJq|executeLua|executeRequired|executeType|executeFormat|executeLength|pipeline|dynamic|partial|referenceData|success|error)\\b"
 				}
 			]
 		},
