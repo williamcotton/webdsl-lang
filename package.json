@@ -1,7 +1,7 @@
 {
   "name": "webdsl",
-  "displayName": "webdsl",
-  "description": "webdsl",
+  "displayName": "WebDSL",
+  "description": "WebDSL",
   "version": "0.0.1",
   "publisher": "William Cotton",
   "author": {
@@ -34,7 +34,9 @@
         "meta.embedded.block.html": "html",
         "meta.embedded.block.css": "css",
         "meta.embedded.block.sql": "sql",
-        "meta.embedded.block.jq": "jq"
+        "meta.embedded.block.jq": "jq",
+        "meta.embedded.block.lua": "lua",
+        "meta.embedded.block.mustache": "mustache"
       }
     }]
   }
