@@ -132,17 +132,10 @@
 			"contentName": "meta.embedded.block.lua",
 			"patterns": [
 				{
-					"include": "source.lua"
-				}
-			]
-		},
-		"embedded-mustache": {
-			"begin": "(?<=mustache\\s*{)",
-			"end": "(?=})",
-			"contentName": "meta.embedded.block.mustache",
-			"patterns": [
+					"include": "#lua-blocks"
+				},
 				{
-					"include": "source.mustache"
+					"include": "source.lua"
 				}
 			]
 		},
@@ -159,6 +152,16 @@
 							"include": "source.lua"
 						}
 					]
+				}
+			]
+		},
+		"embedded-mustache": {
+			"begin": "(?<=mustache\\s*{)",
+			"end": "(?=})",
+			"contentName": "meta.embedded.block.mustache",
+			"patterns": [
+				{
+					"include": "source.mustache"
 				}
 			]
 		},
